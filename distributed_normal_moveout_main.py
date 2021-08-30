@@ -23,7 +23,7 @@ if __name__ == '__main__':
         # initial_args["source_to_receiver_distance"]=np.array([2,4,6,7,8])
         # this will set distance of receivers on one side to the shot source as
         # [2,4,6,7,8] meters respectively
-        #  initial_args["SNR"] = 5 will set SNR for noisy seismic trace as 10dB
+        #  initial_args["SNR"] = 5 will set SNR for noisy seismic trace as 5dB
         #Call the class of distributed NMO and Centralized NMO
         R=Distributed_Normal_moveout_estimator(initial_args)
 
