@@ -14,3 +14,6 @@ Master thesis at DLR, institute of Communications and Navigation.
 
 
 Seismic measurement acquisition and processing
+Deconvolution on seismic measurement to obtain reflectivity series
+![noisytrace](https://user-images.githubusercontent.com/89796179/198648585-1eaf1978-55de-4b52-95b3-5c2769167015.png)
+![noisy_reflectivity](https://user-images.githubusercontent.com/89796179/198650218-a910f229-11ec-4a42-a2ad-a23424dbf68c.png)
