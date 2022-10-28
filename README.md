@@ -19,7 +19,9 @@ Deconvolution on seismic measurement to obtain reflectivity series
 
 
 
-Distributed NMO with average consensus 
+Distributed NMO with average consensus <br/>
+
+
 ![distributed)nmo_initial](https://user-images.githubusercontent.com/89796179/198657417-8543778e-0632-4255-9726-c42c50f8ae45.png)
 ![distributednmo_depth14th](https://user-images.githubusercontent.com/89796179/198657423-b5a43581-7d03-4924-a98c-cc8c8e6c166e.png)
 ![distributednmo_velocity6th](https://user-images.githubusercontent.com/89796179/198657429-e3019871-d68c-4388-bece-b7d665698519.png)
