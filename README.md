@@ -8,3 +8,4 @@ Master thesis at DLR, institute of Communications and Navigation.
 
 # Wave propagation in homogeneous medium 
 
+![wave_pattern3](https://user-images.githubusercontent.com/89796179/198644931-b32f90cb-d0b6-4c3e-a724-b25dc89980b1.png)
