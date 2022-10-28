@@ -16,3 +16,11 @@ Seismic measurement acquisition and processing <br/>
 Deconvolution on seismic measurement to obtain reflectivity series
 ![noisytrace](https://user-images.githubusercontent.com/89796179/198648585-1eaf1978-55de-4b52-95b3-5c2769167015.png)
 ![noisy_reflectivity](https://user-images.githubusercontent.com/89796179/198650218-a910f229-11ec-4a42-a2ad-a23424dbf68c.png)
+
+
+
+Distributed NMO with average consensus 
+![distributed)nmo_initial](https://user-images.githubusercontent.com/89796179/198657417-8543778e-0632-4255-9726-c42c50f8ae45.png)
+![distributednmo_depth14th](https://user-images.githubusercontent.com/89796179/198657423-b5a43581-7d03-4924-a98c-cc8c8e6c166e.png)
+![distributednmo_velocity6th](https://user-images.githubusercontent.com/89796179/198657429-e3019871-d68c-4388-bece-b7d665698519.png)
+![distributednmo_velocity37th](https://user-images.githubusercontent.com/89796179/198657438-f050ae5b-b6fa-44f7-8de0-125e911cefe2.png)
