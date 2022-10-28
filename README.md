@@ -6,7 +6,7 @@ Master thesis at DLR, institute of Communications and Navigation.
    4. Numerical optimization schemes with sensor fusion algorithm implementation via average consensus and adapt-then-combine to achieve autonomous subsurface exploration.
 
 
- Wave propagation in homogeneous medium 
+ Wave propagation in homogeneous medium with Mur absorbing boundary condition
 
 https://user-images.githubusercontent.com/89796179/198653747-844fc700-88d2-4bdc-b906-6a3b9f18ffa9.mp4
 
