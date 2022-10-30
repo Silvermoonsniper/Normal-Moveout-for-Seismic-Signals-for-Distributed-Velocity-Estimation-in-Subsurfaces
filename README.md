@@ -11,16 +11,16 @@ Seismic exploration is of great importance for future planetary missions: the pl
 Research objectives <br/>
 The goal of project is to implement the normal moveout strategy in a distributed fashion for an estimation of the subsurface velocities and layer depths within a network of geophones. To this end, layered Earth models shall be simulated by solving a wave equation that generates synthetic measurements at the geophone locations. Based on the seismic measurements the objective is to reconstruct the velocities and depths of the layered Earth model in a distributed fashion. The developed scheme shall be tested via simulations with synthetic measurement.
 
-Horizontal subsurface model   
- align="center">
+Horizontal subsurface model  
+<p align="center">
   <img src="https://user-images.githubusercontent.com/89796179/198896127-24b86b27-3c53-4a11-aa09-52163da99fd5.png" width="400" />
-   
+  </p> 
 
 
  Wave propagation in homogeneous medium with Mur absorbing boundary condition, the left and right side boundaries are set with Mur absorbing  boundary condition, while the bottom boundary is set to be reflective boundary with Neumann condition.
-<p align="center">
+
 https://user-images.githubusercontent.com/89796179/198653747-844fc700-88d2-4bdc-b906-6a3b9f18ffa9.mp4
-</p>
+
 
 
 Seismic measurement acquisition and processing <br/>
