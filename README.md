@@ -19,7 +19,7 @@ Deconvolution on seismic measurement to obtain reflectivity series
 
 
 
-Distributed NMO with average consensus <br/>
+Distributed NMO performance for 3 layer subsurface model with average consensus <br/>
 
 
 ![distributed)nmo_initial](https://user-images.githubusercontent.com/89796179/198657417-8543778e-0632-4255-9726-c42c50f8ae45.png)
