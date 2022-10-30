@@ -1,6 +1,10 @@
 # Normal-Moveout-of-Seismic-Signals-for-Distributed-Velocity-Estimation-in-Subsurfaces
 
 Python codes and thesis for Master thesis at DLR, institute of Communications and Navigation.  
+<br/><br/>
+The main research objectives for this theis are summarized as follows
+<br/>
+<br/>
    1. Provide Synthetic seismic measurement data generation via wave PDE solver  
    2. Inversion algorithm design to estimate subsurface model parameters 
    3. Deconvoluton and Wiener Filter design to perform denosing
@@ -11,6 +15,11 @@ Seismic exploration is of great importance for future planetary missions: the pl
 
 Research objectives <br/>
 The goal of project is to implement the normal moveout strategy in a distributed fashion for an estimation of the subsurface velocities and layer depths within a network of geophones. To this end, layered Earth models shall be simulated by solving a wave equation that generates synthetic measurements at the geophone locations. Based on the seismic measurements the objective is to reconstruct the velocities and depths of the layered Earth model in a distributed fashion. The developed scheme shall be tested via simulations with synthetic measurement.
+
+
+<br/><br/>
+The general introduction of research problem and partial results are shown here.
+<br/><br/>
 
 Horizontal subsurface model  
 <p align="center">
