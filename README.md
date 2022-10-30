@@ -15,8 +15,12 @@ https://user-images.githubusercontent.com/89796179/198653747-844fc700-88d2-4bdc-
 Seismic measurement acquisition and processing <br/>
 Deconvolution on seismic measurement to obtain reflectivity series
 
-![noisytrace](https://user-images.githubusercontent.com/89796179/198648585-1eaf1978-55de-4b52-95b3-5c2769167015.png)![alt-text-1](https://user-images.githubusercontent.com/89796179/198650218-a910f229-11ec-4a42-a2ad-a23424dbf68c.png)
 
+<p float="left">
+  <img src="(https://user-images.githubusercontent.com/89796179/198648585-1eaf1978-55de-4b52-95b3-5c2769167015.png)" width="100" />
+  <img src="https://user-images.githubusercontent.com/89796179/198650218-a910f229-11ec-4a42-a2ad-a23424dbf68c.png" width="100" /> 
+ 
+</p>
 
 
 Distributed NMO performance for 3 layer subsurface model with average consensus <br/>
