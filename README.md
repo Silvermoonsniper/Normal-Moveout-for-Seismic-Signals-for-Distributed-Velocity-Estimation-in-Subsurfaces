@@ -23,7 +23,7 @@ Deconvolution on seismic measurement to obtain reflectivity series
 </p>
 
 
-Distributed NMO performance for 3 layer subsurface model with average consensus <br/>
+ The performance Distributed NMO for seismic wave velocity estimation for 3 layer subsurface model with average consensus <br/>
 
 <p float="left">
   <img src="https://user-images.githubusercontent.com/89796179/198657417-8543778e-0632-4255-9726-c42c50f8ae45.png" width="400" />
