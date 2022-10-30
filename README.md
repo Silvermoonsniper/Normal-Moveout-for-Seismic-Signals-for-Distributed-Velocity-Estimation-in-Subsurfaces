@@ -17,8 +17,8 @@ Deconvolution on seismic measurement to obtain reflectivity series
 
 
 <p float="left">
-  <img src="(https://user-images.githubusercontent.com/89796179/198648585-1eaf1978-55de-4b52-95b3-5c2769167015.png)" width="100" />
-  <img src="https://user-images.githubusercontent.com/89796179/198650218-a910f229-11ec-4a42-a2ad-a23424dbf68c.png" width="100" /> 
+  <img src="https://user-images.githubusercontent.com/89796179/198648585-1eaf1978-55de-4b52-95b3-5c2769167015.png" width="200" />
+  <img src="https://user-images.githubusercontent.com/89796179/198650218-a910f229-11ec-4a42-a2ad-a23424dbf68c.png" width="200" /> 
  
 </p>
 
