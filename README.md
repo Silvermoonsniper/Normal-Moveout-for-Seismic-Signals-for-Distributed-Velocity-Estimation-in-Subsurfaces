@@ -10,15 +10,15 @@ The main research objectives for this theis are summarized as follows
    3. Deconvoluton and Wiener Filter design to perform denosing
    4. Numerical optimization schemes with sensor fusion algorithm implementation via average consensus and adapt-then-combine to achieve autonomous subsurface exploration.
 
-Problem statement <br/><br/>
+# Problem statement <br/><br/>
 Seismic exploration is of great importance for future planetary missions: the planet’s subsurface structure can reveal a great deal of information about the planet’s past and present. We envision the use of a network of multiple agents – of a swarm – to autonomously and cooperatively reconstruct the subsurface structure. To compute an image of the subsurface typically several processing steps of seismic measurements are required. One of those steps is a so called normal moveout strategy that can be used to obtain velocity estimates of the subsurface. At present seismic exploration surveys such data processing is conducted in a centralized manner, where all seismic measurements are available at a single computing entity. However, for application in a network of multiple agents these computations need to be conducted in a distributed fashion.
 
-Research objectives <br/><br/>
+# Research objectives <br/><br/>
 The goal of project is to implement the normal moveout strategy in a distributed fashion for an estimation of the subsurface velocities and layer depths within a network of geophones. To this end, layered Earth models shall be simulated by solving a wave equation that generates synthetic measurements at the geophone locations. Based on the seismic measurements the objective is to reconstruct the velocities and depths of the layered Earth model in a distributed fashion. The developed scheme shall be tested via simulations with synthetic measurement.
 
 
 <br/><br/>
-The general introduction of research problem and partial results are shown here.
+# The general introduction of research problem and partial results are shown here.
 <br/><br/>
 
 Horizontal subsurface model  
