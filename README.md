@@ -18,7 +18,7 @@ The goal of project is to implement the normal moveout strategy in a distributed
 
 
 <br/><br/>
-# The general introduction of research problem and partial results are shown here.
+# Partial research results
 <br/><br/>
 
 Horizontal subsurface model  
