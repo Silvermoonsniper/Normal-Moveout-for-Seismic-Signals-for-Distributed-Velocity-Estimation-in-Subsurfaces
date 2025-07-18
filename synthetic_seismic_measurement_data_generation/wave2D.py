@@ -13,7 +13,7 @@ import math
 import numpy as np
 
 import matplotlib.pyplot as plt
-from Ricker_wavelt import *
+from synthetic_seismic_measurement_data_generation.Ricker_wavelt import *
 
 
 

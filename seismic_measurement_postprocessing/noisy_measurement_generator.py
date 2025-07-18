@@ -3,7 +3,7 @@ from scipy.linalg import sqrtm
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-from wiener_filter import *
+from  seismic_measurement_postprocessing.wiener_filter import *
 
 # function to generate noisy sesimic trace with AWGN
 #input args:

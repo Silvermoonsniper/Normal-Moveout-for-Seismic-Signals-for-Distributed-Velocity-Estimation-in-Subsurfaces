@@ -1,7 +1,7 @@
 import  numpy as np
 import matplotlib.pyplot as plt
 # a function to select different receiver array with different inter-receiver distance
-import ground_truth_arrival_time_generator
+import synthetic_seismic_measurement_data_generation.ground_truth_arrival_time_generator
 from initial_paramters_setting import initial_parameters_setting
 from main_algorithms.centralized_NMO import vel_depth_estimator, t0_solver
 class distance_effect():

@@ -45,7 +45,7 @@ def arrival_time_picking(reflectivity, trace_number, new_delta_t, newtime_array,
 
     all_peak, peak_amplitude = peak_finder(reflectivity)
     # convert indice to time
-    all_peak = np.array(all_peak) * new_delta_t
+    all_peak = [np.array(peaks) * new_delta_t for peaks in all_peak]
 
     # find local maxima in all reflectivity series and their indices
 

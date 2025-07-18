@@ -1,20 +1,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import STA_LTA_picking_traveltime
+from seismic_measurement_postprocessing.STA_LTA_picking_traveltime import picking_time_noisy_trace_STALTA
 
 
-from Hessian_determinant_plot import Hessian_determinant_plot
-from STA_picking_plot import picking_plot_comparison
-from distributed_nmo_real_time_estimation_error_plot import plot_ATC_estimation_performance
-from estimated_parameters_distributed_ATC import estimated_parameters_plot
+from plot_functions.Hessian_determinant_plot import Hessian_determinant_plot
+from plot_functions.STA_picking_plot import picking_plot_comparison
+from plot_functions.distributed_nmo_real_time_estimation_error_plot import plot_ATC_estimation_performance
+from plot_functions.estimated_parameters_distributed_ATC import estimated_parameters_plot
 
-from estimated_parameters_variation import estimated_parameters_variation
+from plot_functions.estimated_parameters_variation import estimated_parameters_variation
 from initial_paramters_setting import receiver_position_assignment
 
 from main_algorithms import centralized_NMO
 from main_algorithms.distributed_gradient_descent_ATC import neighbours_generator, initial_estimate_parameters,adapt_then_combine_optimizer
 from main_algorithms.velocity_depthestiamtor_with_ATC_framework import vel_depth_solver_ATC_iterations
-from neighbour_number_Influence import plot_neighbour_number_Influence
+from plot_functions.neighbour_number_Influence import plot_neighbour_number_Influence
 
 from synthetic_seismic_measurement_data_generation import ground_truth_arrival_time_generator
 from synthetic_seismic_measurement_data_generation import wave2D
@@ -46,6 +46,11 @@ class Distributed_Normal_moveout_estimator():
         self.depth = initial_args["test_depth"][1:] - initial_args["test_depth"][0:len(initial_args["test_depth"]) - 1]
         # number of layers
         self.layer_n = len(initial_args["layer_velocity"])
+        self.layer_velocity = initial_args["layer_velocity"]
+        self.single_receiver = initial_args["single_receiver"]
+        self.plot_flag = initial_args["plot_flag"]
+        self.picking_travel_time_method = initial_args["picking_travel_time_method"]
+        self.windowsize = initial_args["windowsize"]
         # total time rounds for simulation
         self.time_rounds = int(initial_args["time"] / initial_args["delta_t"])
         # coordinate of source on the ground surface (m), always located at center of ground surface
@@ -73,7 +78,7 @@ class Distributed_Normal_moveout_estimator():
         # time resolution in ground truth series
         self.delta_t1 = self.time1 / self.time_rounds1
         # time array for plotting ground truth sparse series
-        self.time_array1 = np.linspace(1, self.time_rounds1, num=self.time_rounds1) * self.delta_t1
+        self.time_array1 = np.linspace(1, self.time_rounds1, num=int(self.time_rounds1)) * self.delta_t1
         '''''''''''
                 following two ground truth parameters would not influence code 
                 running, but for comparison with estimated parameters
@@ -187,7 +192,7 @@ class Distributed_Normal_moveout_estimator():
 
         # choose the picking method used to get measured travel time of reflections at receivers
         if self.picking_travel_time_method == 'STA_LTA':
-            peak = STA_LTA_picking_traveltime.picking_time_noisy_trace_STALTA(self.time, self.time_rounds, self.windowsize,
+            peak = picking_time_noisy_trace_STALTA(self.time, self.time_rounds, self.windowsize,
                                                                               self.trace_number, newsynthetic_arriavl,
                                                                               newdesired, post_processing1, self.SNR,
                                                                               time_array,

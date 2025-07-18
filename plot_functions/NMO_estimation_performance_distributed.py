@@ -4,7 +4,7 @@ import math
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
-from local_error_local_picking import *
+from plot_functions.local_error_local_picking import *
 import math
 def func(x, a, c):
     return a * x ** 2 + c ** 2

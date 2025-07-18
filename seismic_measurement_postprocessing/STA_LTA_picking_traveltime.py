@@ -3,8 +3,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from STA_ratio_plot import STA_ratio_plot
-from noisy_measurement_generator import target_trace, multiple_noisy_trace
+from plot_functions.STA_ratio_plot import STA_ratio_plot
+from seismic_measurement_postprocessing.noisy_measurement_generator import target_trace, multiple_noisy_trace
 
 # design STA/LTA algorithm to obtain measured travel time of reflection waves at receivers, which is standard method in
 # seismology and earthquake and also small event of wave detection.

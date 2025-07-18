@@ -3,7 +3,7 @@ from scipy import signal
 from scipy.signal import butter, lfilter, freqz
 import matplotlib.pyplot as plt
 import numpy as np
-from Ricker_wavelt import *
+from synthetic_seismic_measurement_data_generation.Ricker_wavelt import *
 # here we try to make a function to estimate arriaval time from output response at receiver
 # input seismic trace is an array
 def Peak_time(data_array, time_array):
@@ -121,10 +121,11 @@ def plot_response(plot_flag, seismic_trace_x,time, time_rounds, time_rounds1, si
       # array to store ground truth array
     newdesired_array = []
     # time series for plotting
-    time_array1 = np.linspace(1, time_rounds1, num=time_rounds1) * delta_t1
-    time_array = np.linspace(1, time_rounds, num=time_rounds) * delta_t
+    time_array1 = np.linspace(1, time_rounds1, num=int(time_rounds1)) * delta_t1
+    time_array = np.linspace(1, time_rounds, num=int(time_rounds)) * delta_t
 
     # two while loops to extract seismic measurement for each receiver
+    print(receiver_number)
     while r < (receiver_number):
         while k <= len(seismic_trace_x):
             if k + r < len(seismic_trace_x):
@@ -224,8 +225,9 @@ def plot_response(plot_flag, seismic_trace_x,time, time_rounds, time_rounds1, si
         # proceed with next sesimic measurement extraction process
         r += 1
         k = 0
+        
         data_array = []
-    plt.show()
+    
     return post_processing, post_processing1, cross, time_array, ricker_amp, newdesired_array
 def multiple_trace_plot(time_array,reflectivity,time_array1,newdesired,peak_source):
     # plot result
@@ -253,4 +255,4 @@ def multiple_trace_plot(time_array,reflectivity,time_array1,newdesired,peak_sour
         ax3.set_ylabel('normalized wave amplitude')
         plt.tight_layout()
         f.legend(['$z_d, d=1,3,5,7,9,11$', 'ground truth'],loc="upper right")
-    plt.show()
+    

@@ -16,7 +16,7 @@ max_time = 0.3
 fm = 200
 # time shift to let Ricker wavelet starts at zero
 time_shift = np.sqrt(2) / (2 * np.pi * fm)
-time_slot = np.linspace(-time_shift, max_time, num=2e3)
+time_slot = np.linspace(-time_shift, max_time, num=2000)
 
 # function to plot ricker wavelet and its spectrum
 # input args:

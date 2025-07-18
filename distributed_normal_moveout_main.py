@@ -7,11 +7,11 @@ different algorithms.
 """""""""
 from Class_Centralized_NMO import Centralized_NMO_estimator
 from Class_DNMO import Distributed_Normal_moveout_estimator
-from distributed_nmo_real_time_estimation_error_plot import plot_scheme_comparison, plot_topology_comparison, \
+from plot_functions.distributed_nmo_real_time_estimation_error_plot import plot_scheme_comparison, plot_topology_comparison, \
     plot_sensornumber_comparison
 from initial_paramters_setting import initial_parameters_setting
-from wave2D import numerical_stability
-import numpy as np
+from synthetic_seismic_measurement_data_generation.wave2D import numerical_stability
+
 if __name__ == '__main__':
         #parameters setting
         initial_args = initial_parameters_setting()

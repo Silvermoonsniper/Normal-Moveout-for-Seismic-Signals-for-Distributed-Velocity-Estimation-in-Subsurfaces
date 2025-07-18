@@ -1,6 +1,6 @@
 from matplotlib import animation
 from IPython.display import HTML
-from local_error_local_picking import *
+from plot_functions.local_error_local_picking import *
 from main_algorithms.real_time_velocity_depth_estimatorNMO import specific_velocity_depth_estimator
 import matplotlib.pyplot as plt
 # function to calculate estimation error of distributed normal-moevout with average consensus

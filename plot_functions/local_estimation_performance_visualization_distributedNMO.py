@@ -1,7 +1,7 @@
 # plot estimation performance at given iteration
 import numpy as np
 import matplotlib.pyplot as plt
-from local_error_local_picking import re_picking_arrival, local_error_calculator
+from plot_functions.local_error_local_picking import re_picking_arrival, local_error_calculator
 from main_algorithms.real_time_velocity_depth_estimatorNMO import specific_velocity_depth_estimator
 
 #input args:

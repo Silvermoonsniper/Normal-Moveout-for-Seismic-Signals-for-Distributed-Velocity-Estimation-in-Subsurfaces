@@ -1,22 +1,22 @@
-import STA_LTA_picking_traveltime
-import ground_truth_arrival_time_generator
-import noisy_measurement_generator
-import seismic_trace_deconvolution
-import seismic_trace_extraction
-import time_resolution
-import travel_time_picking
-import wave2D
-import wave_pattern_plot
-import wave_propagation_video
+from seismic_measurement_postprocessing.STA_LTA_picking_traveltime import picking_time_noisy_trace_STALTA 
+from synthetic_seismic_measurement_data_generation import ground_truth_arrival_time_generator
+from seismic_measurement_postprocessing.noisy_measurement_generator import target_trace,multiple_noisy_trace
+from seismic_measurement_postprocessing import seismic_trace_deconvolution
+from synthetic_seismic_measurement_data_generation import  seismic_trace_extraction
+from seismic_measurement_postprocessing import time_resolution
+from seismic_measurement_postprocessing import travel_time_picking
+from synthetic_seismic_measurement_data_generation import wave2D
+from plot_functions import wave_pattern_plot
+from plot_functions import wave_propagation_video
 from Normal_moveout_analysis.inter_receiver_distance_effect import distance_effect
 from initial_paramters_setting import receiver_position_assignment
 from main_algorithms import centralized_NMO
-from noisy_seismic_trace_plot import noisy_trace_plot
-from reflectivity_series_plot import reflectivity_plot, multiple_reflectivity_plot
+from plot_functions.noisy_seismic_trace_plot import noisy_trace_plot
+from plot_functions.reflectivity_series_plot import reflectivity_plot, multiple_reflectivity_plot
 from IPython.display import HTML
 import numpy as np
 
-from wiener_filter_results_plot import wiener_filter_performance_visualization
+from plot_functions.wiener_filter_results_plot import wiener_filter_performance_visualization
 
 
 class Centralized_NMO_estimator():
@@ -30,6 +30,11 @@ class Centralized_NMO_estimator():
         self.depth = initial_args["test_depth"][1:] - initial_args["test_depth"][0:len(initial_args["test_depth"]) - 1]
         # number of layers
         self.layer_n = len(initial_args["layer_velocity"])
+        self.layer_velocity = initial_args["layer_velocity"]
+        self.plot_flag = initial_args["plot_flag"]
+        self.single_receiver = initial_args["single_receiver"]
+        self.single_plot_indice = initial_args["single_plot_indice"]
+        self.picking_travel_time_method = initial_args["picking_travel_time_method"]
         # total time rounds for simulation
         self.time_rounds = int(initial_args["time"] / initial_args["delta_t"])
         # coordinate of source on the ground surface (m), always located at center of ground surface
@@ -53,7 +58,7 @@ class Centralized_NMO_estimator():
         # ground truth time series is sparse series which only has nonzero entries on ground
         # truth time point, else 0. The choice of this parameter depends on how accurate you
         # want to located discretized ground truth arrival time in plot, usually 100000 is sufficient.
-        self.time_rounds1 = 1e5
+        self.time_rounds1 = 100000
         # time resolution in ground truth series
         self.delta_t1 = self.time1 / self.time_rounds1
         # time array for plotting ground truth sparse series
@@ -89,7 +94,9 @@ class Centralized_NMO_estimator():
                                                                                                     self.receiver,
                                                                                                     self.delta_t1,
                                                                                                     self.time_array1)
-
+      
+        
+        print(1)
         # generate synthetic measurement by solving wave equation
         # solve wave equation with ricker wavelet source with FDTD method
         seismic_trace, grid_pressure, time_grid_pressure, time_stamps,interface_coordinate = wave2D.Arrivaltime_estimation(self.test_depth,
@@ -104,6 +111,7 @@ class Centralized_NMO_estimator():
                                                                                                       self.source_coordinate_x)
 
 
+        print(2)
         # proceed to extract synthetic seismic measurement at receivers
         post_processing, post_processing1, cross, time_array, ricker_amp, newdesired = seismic_trace_extraction.plot_response(
             self.plot_flag,
@@ -113,10 +121,11 @@ class Centralized_NMO_estimator():
             desired,
             self.single_receiver)
         # extract noiseless seismic measurement at different receiver denoted by trace_number
-        target = noisy_measurement_generator.target_trace(post_processing1, self.trace_number)
-
+        target = target_trace(post_processing1, self.trace_number)
+      
+        print(3) 
         # add AWGN to measurement
-        noisy_final, filter_trace, true,standard_deviation_array = noisy_measurement_generator.multiple_noisy_trace(target,
+        noisy_final, filter_trace, true,standard_deviation_array = multiple_noisy_trace(target,
                                                                                                                self.delta_t,
                                                                                                                self.SNR)
 
@@ -138,7 +147,7 @@ class Centralized_NMO_estimator():
 
         # choose the picking method used to get measured travel time of reflections at receivers
         if self.picking_travel_time_method == 'STA_LTA':
-            peak = STA_LTA_picking_traveltime.picking_time_noisy_trace_STALTA(self.time, self.time_rounds,
+            peak = picking_time_noisy_trace_STALTA(self.time, self.time_rounds,
                                                                               self.windowsize,
                                                                               self.trace_number, newsynthetic_arriavl,
                                                                               newdesired, post_processing1, self.SNR,

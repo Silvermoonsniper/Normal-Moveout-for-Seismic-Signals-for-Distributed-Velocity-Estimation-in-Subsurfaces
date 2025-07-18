@@ -11,9 +11,9 @@ import  matplotlib.pyplot as plt
 #output args:
 #          local_t0: estimated parameter two-way vertical travel time t0 at particular time step
 #          local_m0: estimated parameter slowness m0 at particular time step
-import estimated_parameters_distributed_ATC
-from ATC_estimation_performance_plot import estimation_ATC_performance
-from local_error_local_picking import local_error_calculator
+from plot_functions import estimated_parameters_distributed_ATC
+from plot_functions.ATC_estimation_performance_plot import estimation_ATC_performance
+from plot_functions.local_error_local_picking import local_error_calculator
 
 
 def local_estimation(iteration, t0_array, m0_array):
