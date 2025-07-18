@@ -45,7 +45,7 @@ if __name__ == '__main__':
         # 'centralized_nmo': apply centralized NMO
         # 'distributed_nmo_average_consensus': apply distributed NMO with average_consensusand also compare with centralized nmo
         # 'distributed_ATC': apply distributed NMO with Adapt-then-combine
-        NMO_algorithm_flag = 'centralized_nmo'
+        NMO_algorithm_flag = 'distributed_ATC'
         #string to perform comparing analysis about
         # different topology for distributed NMO with average consensus
         # or different distributed NMO schemes

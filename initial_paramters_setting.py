@@ -64,7 +64,7 @@ def initial_parameters_setting():
             # arguments specify for distributed average conensus algorithm used for NMO
         #####
         # FLAG for noisy link
-        "noisy_link": 1,
+        "noisy_link": 0,
 
         # time step for running distributed average consensus
         "DNMO_iteration": 44,

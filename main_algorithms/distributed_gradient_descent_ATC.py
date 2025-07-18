@@ -370,15 +370,15 @@ def SGD_optimizer(SNR_noisy_link,noisy_link,  neighbourindice_array, plot_flag, 
 
     # plot loss variation with different iterations
 
-    if plot_flag == 1:
+    # if plot_flag == 1:
 
-        for l in range(len(receiver_offset)):
-            iteration = np.arange(time_step)
-            plt.plot(iteration, np.array(loss.T[l]))
+    #     for l in range(len(receiver_offset)):
+    #         iteration = np.arange(time_step)
+    #         plt.plot(iteration, np.array(loss.T[l]))
 
-            plt.xlabel('Iteration')
-            plt.ylabel('global cost $c_g$')
-            plt.title('global cost $c_g$ with weight updating')
+    #         plt.xlabel('Iteration')
+    #         plt.ylabel('global cost $c_g$')
+    #         plt.title('global cost $c_g$ with weight updating')
 
 
     # return final estimated t0 m0 and loss array per receiver
