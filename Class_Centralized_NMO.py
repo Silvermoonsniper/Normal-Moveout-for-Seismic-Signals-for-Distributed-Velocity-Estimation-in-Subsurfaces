@@ -35,6 +35,8 @@ class Centralized_NMO_estimator():
         self.single_receiver = initial_args["single_receiver"]
         self.single_plot_indice = initial_args["single_plot_indice"]
         self.picking_travel_time_method = initial_args["picking_travel_time_method"]
+        self.testdepth = initial_args["test_depth"]
+        self.video_flag = initial_args["video_flag"]
         # total time rounds for simulation
         self.time_rounds = int(initial_args["time"] / initial_args["delta_t"])
         # coordinate of source on the ground surface (m), always located at center of ground surface

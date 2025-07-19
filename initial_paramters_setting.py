@@ -30,7 +30,7 @@ def initial_parameters_setting():
     # visualize estimation profile at certain iterations
         "iteration" : [0, 5, 13, 20, 135],
     # SNR for the noisy seismic measurement (dB)
-        "SNR" : 5,
+        "SNR" : 20,
     # total time rounds for simulation, unit:(s)
         "delta_t" : 0.25/5000,
     # total simulation time (s)
