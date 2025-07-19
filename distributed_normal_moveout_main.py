@@ -26,6 +26,7 @@ if __name__ == '__main__':
         #  initial_args["SNR"] = 5 will set SNR for noisy seismic trace as 5dB
         #Call the class of distributed NMO and Centralized NMO
         R=Distributed_Normal_moveout_estimator(initial_args)
+        
 
         C=Centralized_NMO_estimator(initial_args)
         # first perform a checking on Courant number condition, if it is not fulfilled, automacally choose a
@@ -45,7 +46,7 @@ if __name__ == '__main__':
         # 'centralized_nmo': apply centralized NMO
         # 'distributed_nmo_average_consensus': apply distributed NMO with average_consensusand also compare with centralized nmo
         # 'distributed_ATC': apply distributed NMO with Adapt-then-combine
-        NMO_algorithm_flag = 'distributed_ATC'
+        NMO_algorithm_flag = 'distributed_nmo_average_consensus'
         #string to perform comparing analysis about
         # different topology for distributed NMO with average consensus
         # or different distributed NMO schemes
@@ -87,7 +88,7 @@ if __name__ == '__main__':
 
         elif NMO_algorithm_flag == 'distributed_nmo_average_consensus':
 
-           #  R.iteration= [0, 5, 13, 36]
+             R.iteration= [0, 5, 13, 36]
              #this line should not be changed
              travel_time,t0_estimate, para_estimate=[],[],[]
              peak,finaltime,v_error_array, d_error_array,v_error_array_cen,d_error_array_cen=R.distributed_nmo_main(compare_analysis_flag,travel_time,t0_estimate, para_estimate)

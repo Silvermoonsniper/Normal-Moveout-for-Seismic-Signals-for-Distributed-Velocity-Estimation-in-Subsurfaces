@@ -51,6 +51,10 @@ class Distributed_Normal_moveout_estimator():
         self.plot_flag = initial_args["plot_flag"]
         self.picking_travel_time_method = initial_args["picking_travel_time_method"]
         self.windowsize = initial_args["windowsize"]
+        self.line_topology_flag = initial_args["line_topology_flag"]
+        self.iteration = initial_args["iteration"]
+        self.time = initial_args["time"]
+        self.delta_t = initial_args["delta_t"]
         # total time rounds for simulation
         self.time_rounds = int(initial_args["time"] / initial_args["delta_t"])
         # coordinate of source on the ground surface (m), always located at center of ground surface
